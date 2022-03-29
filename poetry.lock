@@ -199,7 +199,7 @@ pydocstyle = ">=2.1"
 
 [[package]]
 name = "flake8-simplify"
-version = "0.15.1"
+version = "0.19.0"
 description = "flake8 plugin which checks for code that can be simplified"
 category = "dev"
 optional = false
@@ -614,7 +614,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "04f1294448f5c873ed68a26ecec97ff79f79a0ed6d3ff0fc6bf1f54caff46ae1"
+content-hash = "bf8094377d82581e3c5cb19d4e5f7edc90a5f933cb186f6365e504a03078b481"
 
 [metadata.files]
 appdirs = [
@@ -690,8 +690,8 @@ flake8-docstrings = [
     {file = "flake8_docstrings-1.6.0-py2.py3-none-any.whl", hash = "sha256:99cac583d6c7e32dd28bbfbef120a7c0d1b6dde4adb5a9fd441c4227a6534bde"},
 ]
 flake8-simplify = [
-    {file = "flake8_simplify-0.15.1-py3-none-any.whl", hash = "sha256:dafa439c33d87bbf0e1d2218ce9cc1395baaf6f94b6c8a0e92d7fe6ba8939c38"},
-    {file = "flake8_simplify-0.15.1.tar.gz", hash = "sha256:43c15229b0e1ecf6a1afaa6e02a42de961ceca57caaf74bac45818130dec44a3"},
+    {file = "flake8_simplify-0.19.0-py3-none-any.whl", hash = "sha256:89d23cf051f4828bf2f669df57ce455ad73f5ac4a3413cbf89c2f54470e4a28d"},
+    {file = "flake8_simplify-0.19.0.tar.gz", hash = "sha256:b13969a67f9e8aad32efac93d8f59080dbff032110b4b21b65de35be6dbdb416"},
 ]
 flake8-use-fstring = [
     {file = "flake8-use-fstring-1.3.tar.gz", hash = "sha256:1bd4a409adbb93e64e711fdd26b88759c33792e3899f174edc68ddf7307e81b6"},
