@@ -227,6 +227,31 @@ class SchwabTransaction(BrokerTransaction):
         return transaction
 
 
+def _schwab_liquid_fund_to_interest(
+    transactions: list[SchwabTransaction],
+) -> list[SchwabTransaction]:
+    result = []
+    for transaction in transactions:
+        if transaction.symbol == "USD2Z":
+            assert transaction.description in [
+                "SCH US$ LIQ. ASSETS FUND",
+                "CHARLES SCHWAB WW USD LIQUID ASSETS",
+            ]
+            # Ignore buy and sells from the fund as the dates are not correct
+            if transaction.action in [
+                ActionType.BUY,
+                ActionType.SELL,
+            ]:
+                continue
+            # Convert dividend transaction into interest
+            if transaction.action == ActionType.DIVIDEND:
+                transaction.amount = transaction.quantity
+                transaction.action = ActionType.INTEREST
+                transaction.quantity = Decimal(0)
+        result.append(transaction)
+    return list(result)
+
+
 def _unify_schwab_cash_merger_trxs(
     transactions: list[SchwabTransaction],
 ) -> list[SchwabTransaction]:
@@ -291,6 +316,7 @@ def read_schwab_transactions(
             ]
             transactions = _unify_schwab_cash_merger_trxs(transactions)
             transactions.reverse()
+            transactions = _schwab_liquid_fund_to_interest(transactions)
             return list(transactions)
     except FileNotFoundError:
         print(f"WARNING: Couldn't locate Schwab transactions file({transactions_file})")
