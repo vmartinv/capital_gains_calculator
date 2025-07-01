@@ -642,6 +642,11 @@ class CapitalGainsCalculator:
                             new_pool_cost=current_amount,
                         )
                     )
+                    # if we have completely matched all shares disposed
+                    # with acquisitions, there is no need
+                    # to keep looking for more
+                    if current_quantity == 0:
+                        break
         if disposal_quantity > 0:
             allowable_cost = current_amount * disposal_quantity / current_quantity
             chargeable_gain += proceeds_amount - allowable_cost
