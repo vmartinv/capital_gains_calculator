@@ -13,6 +13,7 @@ from cgt_calc.args_validators import (
 )
 from cgt_calc.parsers.eri.raw import ERIRawParser
 from cgt_calc.parsers.freetrade import FreetradeParser
+from cgt_calc.parsers.interactive_brokers import InteractiveBrokersParser
 from cgt_calc.parsers.mssb import MSSBParser
 from cgt_calc.parsers.raw import RawParser
 from cgt_calc.parsers.schwab import SchwabParser
@@ -41,6 +42,7 @@ class BrokerRegistry:
         Trading212Parser,
         MSSBParser,
         VanguardParser,
+        InteractiveBrokersParser,
         # Add new brokers here
     ]
 
