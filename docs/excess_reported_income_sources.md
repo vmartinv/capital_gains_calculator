@@ -122,3 +122,32 @@ Columns mapping to ERI_RAW:
 
 </details>
  <br />
+<details>
+    <summary>🏦 Instructions for Global X funds</summary>
+
+Global X UK publishes the UK Reportable Income yearly report at the bottom of this page:
+https://www.globalxetfs.com/filings-and-tax-supplements
+
+Note this tool **already includes** Global X Funds ERI data from 2015 to 2024.
+
+To contribute new data to the tool please run the `import_eri_reports.py` script pointing to either
+the file or the folder containing the ERI reports for Global X. The tool will recognize the funds
+provider from the filename and import the data in the resource CSV for
+[globalx](../cgt_calc/resources/eri/globalx_eri.csv).
+
+- **ISIN:** same name column
+- **Fund Reporting Period End Date:** End date in the Reporting Period column
+- **Currency:** Share Class Currency column
+- **Excess of reporting income over distribution:** same name column The tool also record any new
+  ISIN translation to the resource CSV for
+  [ISIN](../cgt_calc/resources/initial_isin_translation.csv)
+
+To contribute new data to the tool please add it at the bottom of the
+[ERI RAW file](../cgt_calc/resources/eri/globalx_eri.csv) for Global X. Then run the tool once to
+generate any new ISIN translations (if needed) and copy them from your own isin translation file
+(default `isin_translation.csv`) into the
+[tool one](../cgt_calc/resources/initial_isin_translation.csv). Create a pull request with both
+files in GitHub adjusting the README and this file with the updated bundled data.
+
+</details>
+ <br />
