@@ -71,7 +71,7 @@ dev = [
   "types-defusedxml>=0.7.0.20250822",
   "types-python-dateutil>=2.9.0.20250822",
   "types-reportlab>=4.5.1.20260807",
-  "types-requests>=2.32.4.20250913",
+  "types-requests>=2.33.0.20260712",
 ]
 
 [tool.uv.build-backend]
