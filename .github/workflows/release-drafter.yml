@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run release-drafter
-        uses: release-drafter/release-drafter@v7.7.0
+        uses: release-drafter/release-drafter@v7.9.0
         with:
           disable-autolabeler: true
         env:
@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run release-drafter autolabeler
-        uses: release-drafter/release-drafter@v7.7.0
+        uses: release-drafter/release-drafter@v7.9.0
         with:
           disable-releaser: true
         env:
